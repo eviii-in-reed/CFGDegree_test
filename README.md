@@ -1,2 +1,2 @@
-# CFGDegree_test
-a test repository to practice
+# CFGDegree_Homework
+a repository to upload Wei Lu's homework during CFG Degree studies
