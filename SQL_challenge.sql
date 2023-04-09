@@ -23,3 +23,12 @@ FROM students s, results r GROUP BY r.Student_ID;
 		RIGHT JOIN students s ON r.Student_ID = s.Student_ID WHERE r.Mark < 40
 	) AS sr
     );
+    
+DELETE FROM students
+WHERE student_id IN (
+    SELECT sid FROM (
+        SELECT DISTINCT s.student_id AS sid from students as s join results as r on s.student_id = r.student_id 
+		INNER JOIN students ON s.student_id=s.student_id
+        where mark < 40
+    ) as s
+);
